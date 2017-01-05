@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+//Login
+Route::get('/login/yahoo', 'SocialLoginController@yahoo_auth');
+Route::get('/callback/yahoo', 'SocialLoginController@yahoo_callback');
