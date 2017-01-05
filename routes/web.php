@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/admin/', 'AdminController@index');
+
 
 //Login
 Route::get('/login/yahoo', 'SocialLoginController@yahoo_auth');

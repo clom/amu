@@ -5,6 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @property mixed is_admin
+ */
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -15,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_admin',
     ];
 
     /**
@@ -26,4 +30,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    function checkAdmin(){
+        $user = $this->is_admin;
+        if($user)
+            return true;
+        else
+            return false;
+    }
 }

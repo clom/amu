@@ -7,6 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\SocialAccount;
+use Illuminate\Support\Facades\DB;
 
 class SocialLoginController extends Controller
 {
@@ -39,6 +40,7 @@ class SocialLoginController extends Controller
                 'name'   => $providerUser->getName(),
                 'email'  => $providerUser->getEmail(),
                 'avatar' => $providerUser->getAvatar(),
+                'is_admin' => false,
             ]);
             $account->user()->associate($user);
         }
