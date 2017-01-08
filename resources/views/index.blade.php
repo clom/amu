@@ -13,10 +13,19 @@
         <div class="col-md-8">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Service Menu
+                    出発時刻(Departing Time)
                 </div>
                 <div class="panel-body">
-
+                    <table class="table table-responsive">
+                        <thead>
+                            <th>停留所(Bus Stop)</th>
+                            <th>出発時刻(Dep. time)</th>
+                        </thead>
+                        <tbody id="deptime">
+                            <tr><td class="info" colspan="2">本日の運用は終了致しました。</td></tr>
+                        </tbody>
+                    </table>
+                    <label>到着予定時刻 (Arrival Time)</label>
                 </div>
             </div>
         </div>
@@ -26,7 +35,12 @@
                     Service Status
                 </div>
                 <div class="panel-body">
-
+                    <table class="table table-responsive">
+                        <thead>
+                            <th>サービス名</th>
+                            <th>稼働状況</th>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>

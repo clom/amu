@@ -20,7 +20,7 @@ class CreateTimeScheduleTable extends Migration
             $table->string('place_id');
             $table->time('departing_at');
             $table->boolean('is_arrival');
-            $table->primary(['schedule_id', 'no', 'place_id']);
+            $table->primary(['schedule_id', 'no', 'place_id', 'is_arrival']);
             $table->foreign('place_id')->references('id')->on('place')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('schedule_id')->references('id')->on('schedule')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        @if(Auth::user()->checkAdmin())
+                        @if(!Auth::guest() && Auth::user()->checkAdmin())
                             <li><a href="{{url('/admin')}}">管理画面</a></li>
                         @endif
                     </ul>

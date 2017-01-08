@@ -48,7 +48,11 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{url('/admin/place')}}">停留所</a></li>
+                        <li><a href="{{url('/admin/schedule')}}">運行日時</a></li>
+                        <li><a href="{{url('/admin/time')}}">運行ダイヤ</a></li>
+                        <li><a href="{{url('/admin/info')}}">インフォメーション</a></li>
+                        <li><a href="{{url('/admin/change')}}">管理者</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
