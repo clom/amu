@@ -18,6 +18,7 @@ class CreateInfologTable extends Migration
             $table->string('id');
             $table->string('name');
             $table->integer('status');
+            $table->boolean('is_topAlert');
             $table->text('description')->nullable();
             $table->timestamps();
             $table->primary(['id']);
