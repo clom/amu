@@ -23,7 +23,12 @@ Route::get('/admin/schedule', 'AdminController@schedule');
 Route::get('/admin/change', 'AdminController@changeAdmin');
 Route::get('/admin/info', 'AdminController@information');
 
+//api
 Route::resource('/api/v1/admin/permission', 'Api\v1\AdminUserController');
+Route::resource('/api/v1/admin/place', 'Api\v1\AdminPlaceController');
+Route::resource('/api/v1/admin/schedule', 'Api\v1\AdminScheduleController');
+Route::resource('/api/v1/admin/time', 'Api\v1\AdminTimeLineController');
+Route::resource('/api/v1/admin/info', 'Api\v1\AdminInfoController');
 
 //Login
 Auth::routes();
