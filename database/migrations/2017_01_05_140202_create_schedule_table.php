@@ -16,8 +16,9 @@ class CreateScheduleTable extends Migration
         Schema::create('schedule' ,function (Blueprint $table) {
             $table->string('id')->unique();
             $table->string('title');
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->dateTime('startDate')->nullable();
+            $table->dateTime('endDate')->nullable();
+            $table->boolean('isDefault');
             $table->timestamps();
         });
     }
