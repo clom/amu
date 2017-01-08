@@ -40,7 +40,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('./') }}">
+                    <a class="navbar-brand" href="{{ url('/admin') }}">
                         {{ config('app.name', 'Laravel') }} admin panel
                     </a>
                 </div>
@@ -95,8 +95,5 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>

@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class AdminInfoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    private function isAdmin(){
+        return Auth::user()->checkAdmin();
+    }
+
     public function index(Request $req){
         return response()->json([],200);
     }

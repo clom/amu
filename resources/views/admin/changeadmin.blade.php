@@ -34,6 +34,7 @@
                 url: '/api/v1/admin/permission',
                 dataType: 'json',
                 success: function (data) {
+                    $('#UserList').empty();
                     var usertable = '';
                     data.forEach(function(user){
                         usertable = usertable + '<tr><td>'+user.id+'</td><td>'+user.name+'</td><td>'+user.email+'</td><td>'+ (user.is_admin? '管理者' : '非管理者') +'</td><td><button class="btn btn-default" onclick="switchUser('+user.id+')">変更</button></td></tr>';

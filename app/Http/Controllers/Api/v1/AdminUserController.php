@@ -38,6 +38,9 @@ class AdminUserController extends Controller
             ->where('id', $id)
             ->first();
 
+        if(empty($userData))
+            return response()->json(['message'=>'no user'], 404);
+
         return response()->json($userData,200);
     }
 
