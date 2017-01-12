@@ -28,6 +28,8 @@ class AdminScheduleController extends Controller
     }
 
     public function show(Request $req, $id){
+        if(!$this->isAdmin())
+            return response()->json(['message'=>'no Admin user'], 403);
         $scheduleData = DB::table('schedule')
             ->where('id', $id)
             ->first();

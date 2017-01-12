@@ -20,14 +20,34 @@ class AdminInfoController extends Controller
     }
 
     public function index(Request $req){
-        $infoData = DB::table('infolog')
-            ->limit(5)
+        if(!$this->isAdmin())
+            return response()->json(['message'=>'no Admin user'], 403);
+
+        $query = $req->input('q') != null ? $req->input('q') : null;
+        $limit = $req->input('li') != null ? $req->input('li') : 10;
+        $offset = $req->input('off') != null ? $req->input('off') : 0;
+
+        $sql = DB::table('infolog');
+
+        if(empty($query)){
+            $word = explode(" ", $query);
+            foreach ($word as $value){
+                $sql->where('name', $query);
+            }
+        }
+
+        $infoData = $sql
+            ->skip($offset)
+            ->take($limit)
             ->get();
 
         return response()->json($infoData,200);
     }
 
     public function show(Request $req, $id){
+        if(!$this->isAdmin())
+            return response()->json(['message'=>'no Admin user'], 403);
+
         $infoData = DB::table('infolog')
             ->where('id', $id)
             ->first();
