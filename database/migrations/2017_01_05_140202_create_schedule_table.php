@@ -19,6 +19,7 @@ class CreateScheduleTable extends Migration
             $table->dateTime('startDate')->nullable();
             $table->dateTime('endDate')->nullable();
             $table->boolean('isDefault');
+            $table->boolean('isStopWeekend');
             $table->timestamps();
         });
     }
